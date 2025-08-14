@@ -28,6 +28,7 @@ public class Produto {
     private BigDecimal preco;
     private String categoria;
     private boolean disponivel;
+    private String descricao;
 
     // TABELA RESTAURANTE MAPEADA PARA PRODUTO
     @ManyToOne

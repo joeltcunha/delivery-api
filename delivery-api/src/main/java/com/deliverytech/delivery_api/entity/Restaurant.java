@@ -22,6 +22,7 @@ public class Restaurant {
     private String nome;
     @Column(name = "descricao_local")
     private String descricao;
+    private String endereco;
 
     // TABELA PRODUTO MAPEADA PARA RESTAURANTE
     @OneToMany(mappedBy = "restaurante")

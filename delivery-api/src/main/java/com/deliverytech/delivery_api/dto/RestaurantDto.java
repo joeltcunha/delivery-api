@@ -6,10 +6,12 @@ import lombok.Data;
 public class RestaurantDto {
     private String name;
     private String description;
+    private String address;
 
-    public RestaurantDto(String name, String description) {
+    public RestaurantDto(String name, String description, String address) {
         this.name = name;
         this.description = description;
+        this.address = address;
     }
     public RestaurantDto() {
         super();
@@ -20,6 +22,7 @@ public class RestaurantDto {
         return "RestaurantDto{" +
                "name='" + name + '\'' +
                ", description='" + description + '\'' +
+               ", address=" + address +
                '}';
     }
 }
