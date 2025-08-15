@@ -19,8 +19,8 @@ public class Restaurant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    
     private long id;
+    @Column(name = "name", nullable = false)
     private String nome;
-    @Column(name = "descricao_local")
     private String descricao;
     private String endereco;
 
