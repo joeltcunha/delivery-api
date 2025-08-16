@@ -10,6 +10,6 @@ public interface ProdutoService {
     public ProdutoDto buscarProdutoPorId(Long id);
     public ProdutoDto atualizarProduto(Long id, ProdutoDto produtoDto);
     public ProdutoDto alterarDisponibilidade(Long id, boolean disponivel);
-    public ProdutoDto buscarProdutosPorCategoria(String categoria);
+    public List<ProdutoDto> findProdutoByCategoria(String categoria);
 
 }

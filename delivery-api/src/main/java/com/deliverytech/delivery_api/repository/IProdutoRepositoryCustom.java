@@ -3,11 +3,9 @@ package com.deliverytech.delivery_api.repository;
 import java.math.BigDecimal;
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.deliverytech.delivery_api.entity.Produto;
 
-public interface ProdutoRepository extends JpaRepository <Produto, Long>, IProdutoRepositoryCustom{
+public interface IProdutoRepositoryCustom {
     // Produtos por restaurante
     List<Produto> findByRestauranteId(Long restauranteId);
 

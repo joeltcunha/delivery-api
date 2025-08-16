@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.deliverytech.delivery_api.dto.ProdutoDto;
@@ -44,5 +45,11 @@ public class ProdutoController {
     public ResponseEntity<ProdutoDto> atualizarProduto(@RequestBody ProdutoDto produtoDto, Long id) {
         ProdutoDto produtoSalvo = produtoService.atualizarProduto(id, produtoDto);
         return ResponseEntity.ok(produtoSalvo);
+    }
+
+    @GetMapping("byCategoria")
+    public ResponseEntity<List<ProdutoDto>> findProdutoByCategoria(@RequestParam("query") String categoria) {
+        List<ProdutoDto> produtoDto = produtoService.findProdutoByCategoria(categoria);
+        return ResponseEntity.ok(produtoDto);
     }
 }
