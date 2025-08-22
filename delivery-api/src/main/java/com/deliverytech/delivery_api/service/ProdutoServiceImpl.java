@@ -67,5 +67,11 @@ public class ProdutoServiceImpl implements ProdutoService{
         ModelMapper modelMapper = new ModelMapper();
         return repository.findByCategoria(categoria).stream().map(produto -> modelMapper.map(produto,ProdutoDto.class)).collect(Collectors.toList());
     }
+
+    @Override
+    public List<ProdutoDto> findAll() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    }
     
 }

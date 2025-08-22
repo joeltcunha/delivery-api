@@ -28,7 +28,7 @@ public class ProdutoRepositoryImpl implements IProdutoRepositoryCustom{
     @Override
     public List<Produto> findByCategoria(String categoria) {
         // TODO Auto-generated method stub
-        String formattedString = "select p from Produto p where categoria = '" + categoria + "'";
+        String formattedString = String.format("select p from Produto p where categoria = :categoria", categoria);
 
         TypedQuery<Produto> query = entityManager.createQuery(formattedString, Produto.class);
         return query.getResultList();
