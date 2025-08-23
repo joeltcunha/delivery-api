@@ -1,13 +1,17 @@
-package com.deliverytech.delivery_api.dto;
+package com.deliverytech.delivery_api.pedido.dto;
 
 import java.util.List;
+
+import com.deliverytech.delivery_api.dto.ItemPedidoDto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import lombok.Data;
 
+@Data
 public class PedidoDto {
     
     @NotNull

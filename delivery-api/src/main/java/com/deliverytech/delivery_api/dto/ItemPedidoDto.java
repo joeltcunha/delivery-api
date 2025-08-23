@@ -5,7 +5,9 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
 
+@Data
 public class ItemPedidoDto {
 
     @NotNull(message = "Produto ID é obrigatório")

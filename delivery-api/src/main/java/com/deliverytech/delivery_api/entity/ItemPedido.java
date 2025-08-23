@@ -2,6 +2,8 @@ package com.deliverytech.delivery_api.entity;
 
 import java.math.BigDecimal;
 
+import com.deliverytech.delivery_api.pedido.entity.Pedido;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

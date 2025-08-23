@@ -1,12 +1,12 @@
-package com.deliverytech.delivery_api.service;
+package com.deliverytech.delivery_api.pedido.service;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 import com.deliverytech.delivery_api.dto.ItemPedidoDto;
-import com.deliverytech.delivery_api.dto.PedidoDto;
 import com.deliverytech.delivery_api.dto.PedidoResponseDto;
 import com.deliverytech.delivery_api.entity.StatusPedido;
+import com.deliverytech.delivery_api.pedido.dto.PedidoDto;
 
 public interface IPedidoService {
 

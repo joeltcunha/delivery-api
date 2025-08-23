@@ -1,8 +1,13 @@
-package com.deliverytech.delivery_api.entity;
+package com.deliverytech.delivery_api.pedido.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+
+import com.deliverytech.delivery_api.entity.Cliente;
+import com.deliverytech.delivery_api.entity.ItemPedido;
+import com.deliverytech.delivery_api.entity.Restaurant;
+import com.deliverytech.delivery_api.entity.StatusPedido;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -28,7 +33,7 @@ public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
  
     private LocalDateTime dataPedido;
     private String enderecoEntrega;
