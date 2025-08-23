@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.deliverytech.delivery_api.dto.ItemPedidoDto;
 import com.deliverytech.delivery_api.dto.PedidoDto;
+import com.deliverytech.delivery_api.dto.PedidoResponseDto;
+import com.deliverytech.delivery_api.entity.StatusPedido;
 
 public interface IPedidoService {
 

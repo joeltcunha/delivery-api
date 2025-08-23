@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.deliverytech.delivery_api.dto.ItemPedidoDto;
 import com.deliverytech.delivery_api.dto.PedidoDto;
+import com.deliverytech.delivery_api.dto.PedidoResponseDto;
+import com.deliverytech.delivery_api.entity.Cliente;
 import com.deliverytech.delivery_api.entity.StatusPedido;
 import com.deliverytech.delivery_api.repository.ProdutoRepository;
 
@@ -22,6 +24,7 @@ public class PedidoServiceImpl implements IPedidoService{
 
     @Override
     public PedidoResponseDto criarPedido(PedidoDto dto) {
+        Cliente cliente = clienteRepository.findById(dto.getClienteId()).orElse
        
     }
 

@@ -10,12 +10,14 @@ import org.springframework.stereotype.Service;
 import com.deliverytech.delivery_api.dto.ClienteDto;
 import com.deliverytech.delivery_api.dto.ClienteResponseDto;
 import com.deliverytech.delivery_api.entity.Cliente;
+import com.deliverytech.delivery_api.exception.BusinessException;
 import com.deliverytech.delivery_api.repository.ProdutoRepository;
 
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class ClienteServiceImpl implements ClienteService{
+    
     @Autowired
     private ClienteRepository clienteRepository;
      public ClienteServiceImpl(ClienteRepository repository) {
@@ -83,7 +85,7 @@ public class ClienteServiceImpl implements ClienteService{
     @Override
     public ClienteResponseDto ativarDesativarCliente(Long id) {
         // Busca o cliente pelo ID. Se não encontrar, lança exceção
-        Cliente cliente = clienteRepository.findById.orElseThrow(() -> new EntityNotFoundException("Cliente não encontrado. "));
+        Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Cliente não encontrado. "));
 
         // Inverte o status atual do cliente (ativo <=> inativo)
         cliente.setAtivo(!cliente.isAtivo());

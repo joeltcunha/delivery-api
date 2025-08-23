@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.deliverytech.delivery_api.dto.PedidoDto;
+import com.deliverytech.delivery_api.dto.PedidoResponseDto;
+import com.deliverytech.delivery_api.service.PedidoService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
