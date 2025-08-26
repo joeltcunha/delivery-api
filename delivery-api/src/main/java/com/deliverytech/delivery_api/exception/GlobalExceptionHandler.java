@@ -11,8 +11,12 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
+import io.swagger.v3.oas.annotations.Hidden;
+
 import com.deliverytech.delivery_api.dto.ErrorResponse;
 
+
+@Hidden
 @ControllerAdvice
 public class GlobalExceptionHandler {
 

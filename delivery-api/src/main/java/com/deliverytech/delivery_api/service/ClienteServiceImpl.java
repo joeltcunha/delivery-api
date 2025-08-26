@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import com.deliverytech.delivery_api.dto.ClienteDto;
 import com.deliverytech.delivery_api.dto.ClienteResponseDto;
 import com.deliverytech.delivery_api.entity.Cliente;
+import com.deliverytech.delivery_api.entity.Produto;
 import com.deliverytech.delivery_api.exception.BusinessException;
+import com.deliverytech.delivery_api.repository.IClienteRepository;
 import com.deliverytech.delivery_api.repository.ProdutoRepository;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -19,9 +21,9 @@ import jakarta.persistence.EntityNotFoundException;
 public class ClienteServiceImpl implements ClienteService{
     
     @Autowired
-    private ClienteRepository clienteRepository;
-     public ClienteServiceImpl(ClienteRepository repository) {
-        this.repository = repository;
+    private IClienteRepository clienteRepository;
+     public ClienteServiceImpl(IClienteRepository repository) {
+        this.clienteRepository = repository;
     }
 
     @Autowired
@@ -31,10 +33,13 @@ public class ClienteServiceImpl implements ClienteService{
     public ClienteResponseDto cadastrarCliente(ClienteDto dto) {
 
         // Verifica se já existe um cliente com o e-mail informado
-        if (clienteRepository.existsByEmail(dto.getEmail())) {
+              
+         if (clienteRepository.existsByEmail(dto.getEmail())) {
+
             throw new BusinessException("E-mail já cadastrado: " + dto.getEmail());
             
         }
+       
 
         // Converta o DTO recebido para a entidade Cliente
         Cliente cliente = modelMapper.map(dto, Cliente.class);
@@ -64,7 +69,7 @@ public class ClienteServiceImpl implements ClienteService{
         Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Cliente não encontrado. "));
 
         // Verifica se o e-mail foi alterado e se já está sendo usado por outro cliente
-        if (!cliente.getEmail().equals(dto.getEmail()) && clienteRepository.existsByEmail(dto.getMail())) {
+        if (!cliente.getEmail().equals(dto.getEmail()) && clienteRepository.existsByEmail(dto.getEmail())) {
 
             throw new BusinessException("E-mail já cadastrado: " + dto.getEmail());
             
@@ -98,11 +103,16 @@ public class ClienteServiceImpl implements ClienteService{
     @Override
     public List<ClienteResponseDto> listarClientesAtivos() {
         // Busca todos os clientes com status ativo no repositório
-        return clienteRepository.findByAtivoTrue().stream
-        // Converte cada cliente em ClienteResponseDto
-        .map(c -> modelMapper.map(c, ClienteResponseDto.class))
-        // Coleta os resultados em uma lista
-        .collect(Collectors.toList());
+                // Coleta os resultados em uma lista
+        List<Cliente> clientes = clienteRepository.findByAtivoTrue();
+        List<ClienteResponseDto> dtos = clientes.stream().map(cliente -> modelMapper.map(cliente,ClienteResponseDto.class)).collect(Collectors.toList());
+        return dtos;
+    }
+
+    @Override
+    public ClienteResponseDto buscarClientePorEmail(String email) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscarClientePorEmail'");
     }
 
 }

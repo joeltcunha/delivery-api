@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.deliverytech.delivery_api.dto.PedidoResponseDto;
 import com.deliverytech.delivery_api.pedido.dto.PedidoDto;
-import com.deliverytech.delivery_api.pedido.service.PedidoService;
+import com.deliverytech.delivery_api.pedido.service.IPedidoService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
@@ -17,9 +17,9 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 @RequestMapping("/api/pedidos")
 
 public class PedidoController {
-    private final PedidoService service;
+    private final IPedidoService service;
 
-    public PedidoController(PedidoService service){
+    public PedidoController(IPedidoService service){
         this.service = service;
     }
 

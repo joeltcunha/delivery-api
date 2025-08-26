@@ -40,6 +40,7 @@ public class Pedido {
     private BigDecimal subtotal;
     private BigDecimal taxaEntrega;
     private BigDecimal valorTotal;
+
  
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
