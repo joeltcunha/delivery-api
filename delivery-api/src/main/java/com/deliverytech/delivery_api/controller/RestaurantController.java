@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.deliverytech.delivery_api.dto.RestaurantDto;
 import com.deliverytech.delivery_api.service.RestaurantService;
 
+@RestController
 @RequestMapping("/api/restaurantes")
 @CrossOrigin(origins = "*")
-@RestController
 public class RestaurantController {
     private RestaurantService restaurantService;
  

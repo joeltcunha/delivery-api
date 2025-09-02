@@ -32,5 +32,6 @@ Sistema de delivery desenvolvido com Spring Boot e Java 21.
 - Profile: development
 
 ## 👨‍💻 Desenvolvedor
-[Seu Nome] - [Sua Turma]
+Joel Teixeira da Cunha - Arquitetura de Sistemas
+Github - https://github.com/joeltcunha/delivery-api.git
 Desenvolvido com JDK 21 e Spring Boot 3.2.x
