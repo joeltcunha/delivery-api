@@ -22,7 +22,7 @@ import com.deliverytech.delivery_api.service.ProdutoService;
 
 @PreAuthorize("isAuthenticated()")
 @RestController
-@RequestMapping("/api/v1/product")
+@RequestMapping("/api/produto")
 public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;

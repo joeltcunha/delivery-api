@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Date;
 
+import javax.management.relation.Role;
+
 @Service
 public class TokenService {
 
@@ -37,6 +39,10 @@ public class TokenService {
             String token = JWT.create()
                     .withIssuer("auth-api")
                     .withSubject(user.getLogin())
+                    .withClaim("Role", user.getRole().toString())
+                    // .withClaim("Role", user.getRoles().stream()
+                    //         .map(Enum::name)
+                    //         .toList())
                     .withExpiresAt(genExpirationDate())
                     .sign(algorithm);
             return token;

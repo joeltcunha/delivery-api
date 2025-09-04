@@ -12,11 +12,13 @@ import com.deliverytech.delivery_api.dto.ClienteDto;
 import com.deliverytech.delivery_api.dto.ClienteResponseDto;
 import com.deliverytech.delivery_api.dto.ProdutoDto;
 import com.deliverytech.delivery_api.service.ClienteService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import jakarta.validation.Valid;
 @RestController
 @ResquestMapping("/api/clientes")
 @CrossOrigin(origins = "*")
+@SecurityRequirement(name = "Bearer Authentication")
 public class ClienteController {
     @Autowired
     private final ClienteService service;

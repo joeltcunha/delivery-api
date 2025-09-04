@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
- public class Users implements UserDetails{
+public class Users implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
 
@@ -51,8 +51,7 @@ import lombok.NoArgsConstructor;
 
     @Override
     public String getUsername() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
+        return login;
     }
  
 }

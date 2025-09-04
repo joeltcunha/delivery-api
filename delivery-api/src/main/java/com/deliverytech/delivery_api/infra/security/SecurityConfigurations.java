@@ -33,10 +33,11 @@ public class SecurityConfigurations {
                                 "/swagger-ui.html",
                                 "/v3/api-docs/**",
                                 "/swagger-resources/**",
-                                "/webjars/**")
+                                "/webjars/**",
+                                "/api/v1/auth/**")
                         .permitAll()
-                        // .requestMatchers(HttpMethod.POST,"/api/products").hasRole("ADMIN") - Exemplo
-                        // de autenticação por role
+                        .requestMatchers(HttpMethod.POST,"/api/*").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST,"/api/*").hasRole("USER")
                         .anyRequest().authenticated())
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();

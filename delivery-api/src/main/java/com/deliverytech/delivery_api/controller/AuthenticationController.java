@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("api/v1/auth")
+@RequestMapping("api/auth")
 public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -50,4 +50,5 @@ public class AuthenticationController {
  
         return ResponseEntity.ok().build();
     }
+    // Implantar atualização/alteração de senha
 }
